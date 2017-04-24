@@ -13,7 +13,7 @@
                             <!-- .navbar-header start -->
                             <div class="navbar-header">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img src="https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png" width="50" alt=""/>
                                     </a>
                                 </div><!-- .logo end -->

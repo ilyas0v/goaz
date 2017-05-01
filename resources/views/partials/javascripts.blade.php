@@ -1,10 +1,10 @@
-<script src="js/jquery-2.1.4.min.js"></script><!-- jQuery library -->
-<script src="js/bootstrap.min.js"></script><!-- .bootstrap script -->
-<script src="js/jquery.srcipts.min.js"></script><!-- modernizr, retina, stellar for parallax -->
-<script src="owl-carousel/owl.carousel.min.js"></script><!-- Carousels script -->
-<script src="masterslider/masterslider.min.js"></script><!-- Master slider main js -->
-<script src="js/jquery.dlmenu.min.js"></script><!-- for responsive menu -->
-<script src="js/include.js"></script><!-- custom js functions -->
+{!! HTML::script('js/jquery-2.1.4.min.js'); !!}
+{!! HTML::script('js/bootstrap.min.js'); !!}
+{!! HTML::script('js/jquery.srcipts.min.js'); !!}
+{!! HTML::script('owl-carousel/owl.carousel.min.js'); !!}
+{!! HTML::script('masterslider/masterslider.min.js'); !!}
+{!! HTML::script('js/jquery.dlmenu.min.js'); !!}
+{!! HTML::script("js/include.js"); !!}
 
 <script>
     /* <![CDATA[ */

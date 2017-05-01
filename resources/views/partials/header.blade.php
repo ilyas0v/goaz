@@ -25,6 +25,11 @@
                                     <li class="{{Request::is('/') ? 'current-menu-item' : '' }}">
                                         <a href="/" >Ana səhifə</a>
                                     </li>
+
+                                    <li class="{{Request::is('/masinlar') ? 'current-menu-item' : '' }}">
+                                        <a href="/masinlar" >Maşınlar</a>
+                                    </li>
+
                                     <li class="{{Request::is('haqqimizda') ? 'current-menu-item' : '' }}">
                                         <a href="/haqqimizda" >Haqqımızda</a>
                                     </li>
@@ -44,8 +49,23 @@
                                             <li><a href="#">Digər</a></li>
                                         </ul><!-- .dropdown-menu end -->
                                     </li><!-- .dropdown end -->
-              <li class="{{Request::is('giris') ? 'current-menu-item' : '' }}"><a href="giris">Giriş</a></li>
-              <li class="{{Request::is('qeydiyyat') ? 'current-menu-item' : '' }}"><a href="qeydiyyat">Qeydiyyat</a></li>
+
+                                    @if(Auth::check())
+                                            <li class="dropdown">
+                                              <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative;padding-left:50px;">
+                                                <span><img style="width:32px;position:absolute;right:25px;top:20px;bottom:10px;" src="https://cdn0.iconfinder.com/data/icons/the-essential/30/user-512.png"></span><!--{{Auth::user()->name}}--> <span class="caret"></span></a>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="#">Profil</a></li>
+                                                <li><a href="{{url('/masinlar/elave_et')}}">Yeni maşın əlavə et (+)</a></li>
+                                                <li><a href="{{url('cixis')}}">Çıxış</a></li>
+                                              </ul>
+                                            </li>
+                                            @else
+
+                                          <li class="{{Request::is('giris') ? 'current-menu-item' : '' }}"><a href="/giris">Giriş</a></li>
+                                          <li class="{{Request::is('qeydiyyat') ? 'current-menu-item' : '' }}"><a href="/qeydiyyat">Qeydiyyat</a></li>
+
+                                    @endif
                                 </ul><!-- .nav.navbar-nav end -->
 
                                 <!-- RESPONSIVE MENU -->
@@ -56,6 +76,10 @@
                                         <li>
                                             <a href="/">Ana səhifə</a>
 
+                                        </li>
+
+                                        <li >
+                                            <a href="/masinlar" >Maşınlar</a>
                                         </li>
 
                                         <li>
@@ -75,12 +99,21 @@
                                                 <li><a href="#">Digər</a></li>
                                             </ul><!-- .dl-submenu end -->
                                         </li>
-                                        <li>
-                                            <a href="/giris">Giriş</a>
-                                        </li>
-                                        <li>
-                                            <a href="/qeydiyyat">Qeydiyyat</a>
-                                        </li>
+                                        @if(Auth::check())
+                                                <li>
+                                                  <a href="#">Hello {{Auth::user()->name}}</a>
+                                                  <ul class="dl-submenu">
+                                                    <li><a href="#">Profil</a></li>
+                                                    <li><a href="{{url('/masinlar/elave_et')}}">Yeni maşın əlavə et (+)</a></li>
+                                                    <li><a href="{{url('cixis')}}">Çıxış</a></li>
+                                                  </ul>
+                                                </li>
+                                                @else
+
+                                              <li ><a href="giris">Giriş</a></li>
+                                              <li><a href="qeydiyyat">Qeydiyyat</a></li>
+
+                                        @endif
                                     </ul><!-- .dl-menu end -->
                                 </div><!-- #dl-menu end -->
 

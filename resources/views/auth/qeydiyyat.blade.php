@@ -3,6 +3,7 @@
 @section("content")
 <div class="page-title-style01 page-title-negative-top pt-bkg08" style="margin-bottom:1px;">
 <div class="container">
+  @include('partials.messages')
 <div class="row">
     <div class="col-md-4 col-md-offset-4" style="border:1px solid white;padding:50px;">
         {!! Form::open() !!}

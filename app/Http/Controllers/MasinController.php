@@ -7,6 +7,7 @@ use App\Masinlar;
 use Image;
 use Session;
 use Auth;
+use App\Surucu;
 class MasinController extends Controller
 {
     /**
@@ -27,7 +28,8 @@ class MasinController extends Controller
      */
     public function create()
     {
-        return view('masinlar.create');
+        $suruculer = Surucu::all();
+        return view('masinlar.create')->withSuruculer($suruculer);
     }
 
     /**
@@ -41,7 +43,7 @@ class MasinController extends Controller
       $this->validate($request,[
         'bashliq' => 'required|max:255',
         'slug'    => 'required|alpha_dash|min:5|max:255|unique:masinlars,slug',
-        'surucu'  => 'required|max:255',
+        'surucu_id'  => 'required|integer',
         'sheher'  => 'required|max:30',
         'qiymet'  => 'required|integer',
         'dashiya_bileceyi_yuk' => 'required|integer',
@@ -50,7 +52,7 @@ class MasinController extends Controller
       $masin = new Masinlar;
       $masin->bashliq = $request->bashliq;
       $masin->slug = $request->slug;
-      $masin->surucu = $request->surucu;
+      $masin->surucu_id = $request->surucu_id;
       $masin->sheher = $request->sheher;
       $masin->qiymet = $request->qiymet;
       $masin->dashiya_bileceyi_yuk = $request->dashiya_bileceyi_yuk;
@@ -79,6 +81,8 @@ class MasinController extends Controller
     {
         if($slug=="elave_et"){
           if (Auth::check()) {
+            $suruculer = Surucu::all();
+            return view('masinlar.create')->withSuruculer($suruculer);
               return view("masinlar.create");
           }else{
             $masin=null;
@@ -95,9 +99,15 @@ class MasinController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $masin=Masinlar::where('slug','=',$slug)->first();
+        $suruculer=Surucu::all();
+        $suruculers = [];
+        foreach($suruculer as $s){
+          $suruculers[$s->id] = $s->ad." ".$s->soyad;
+        }
+        return view('masinlar.edit')->withMasin($masin)->withSuruculers($suruculers);
     }
 
     /**

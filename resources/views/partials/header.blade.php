@@ -56,7 +56,9 @@
                                                 <span><img style="width:32px;position:absolute;right:25px;top:20px;bottom:10px;" src="https://cdn0.iconfinder.com/data/icons/the-essential/30/user-512.png"></span><!--{{Auth::user()->name}}--> <span class="caret"></span></a>
                                               <ul class="dropdown-menu">
                                                 <li><a href="#">Profil</a></li>
+                                                <li><a href="{{url('suruculer')}}">Sürücülər</a></li>
                                                 <li><a href="{{url('/masinlar/elave_et')}}">Yeni maşın əlavə et (+)</a></li>
+
                                                 <li><a href="{{url('cixis')}}">Çıxış</a></li>
                                               </ul>
                                             </li>
@@ -101,9 +103,10 @@
                                         </li>
                                         @if(Auth::check())
                                                 <li>
-                                                  <a href="#">Hello {{Auth::user()->name}}</a>
+                                                  <a href="#">{{Auth::user()->name}}</a>
                                                   <ul class="dl-submenu">
                                                     <li><a href="#">Profil</a></li>
+                                                    <li><a href="{{url('suruculer')}}">Sürücülər</a></li>
                                                     <li><a href="{{url('/masinlar/elave_et')}}">Yeni maşın əlavə et (+)</a></li>
                                                     <li><a href="{{url('cixis')}}">Çıxış</a></li>
                                                   </ul>

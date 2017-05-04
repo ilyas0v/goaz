@@ -5,9 +5,9 @@
   <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1>Yeni maşın əlavəsi</h1>
+        <h1>Düzəliş səhifəsi | <b style="color:lightblue">{{$masin->bashliq}}</b></h1>
         <hr>
-        {!! Form::open(['route' => 'masinlar.store' , 'files'=>true]) !!}
+        {!! Form::model($masin , ["route"=>["masinlar.update" , $masin->id ], "method"=>"PUT"]) !!}
           {{ Form::label("bashliq", "Başlıq:") }}
           {{ Form::text("bashliq",null ,array("class"=>"form-control" , "required"=>"")) }}
 
@@ -15,11 +15,7 @@
           {{ Form::text("slug",null,["class"=>"form-control" , "required"=>""]) }}
 
           {{ Form::label("surucu_id","Sürücünün ad və soyadı:" , ["style"=>"margin-top:10px;"]) }}
-          <select class="form-control" name="surucu_id">
-            @foreach($suruculer as $surucu)
-              <option value="{{$surucu->id}}">{{$surucu->ad." ".$surucu->soyad}}</option>
-            @endforeach
-          </select>
+          {{ Form::select("surucu_id" , $suruculers , null ,['class'=>'form-control'])}}
 
           {{ Form::label("sheher","Fəaliyyət göstərdiyi şəhər:" , ["style"=>"margin-top:10px;"]) }}
           {{ Form::text("sheher",null,["class"=>"form-control" , "required"=>""]) }}

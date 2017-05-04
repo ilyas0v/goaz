@@ -5,5 +5,6 @@
 @include('partials.footer')
 @include('partials.javascripts')
 @yield('scripts')
+@yield('JS')
 </body>
 </html>

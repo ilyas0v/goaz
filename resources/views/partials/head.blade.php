@@ -23,4 +23,10 @@
 
         <!-- Font icons -->
         {!! HTML::style('icon-fonts/font-awesome-4.3.0/css/font-awesome.min.css'); !!}
+        <style>
+          .surucu-avatar-boyuk{transition:1s width;width:60% !important;}
+          .surucu-avatar{transition:1s width;width:20%;}
+          .surucu-ad{transition:1s display;display:none;}
+          .surucu-ad-gorunen{transition: 1s display;display: block !important;}
+        </style>
     </head>

@@ -29,7 +29,7 @@
           <img class="surucu-avatar" data-surucu="{{$masin->id}}" style="border:1px solid black;
             border-radius:50%;position: absolute;z-index: 100;
             left: 20px;top: 5px;cursor:pointer;"
-            src="{{url('surucu-images')}}/{{$masin->surucu()}}"
+            src="{{url('surucu-images')}}/{{$masin->surucu()->shekil_url}}"
             title="">
 
             <div class="surucu-ad" data-surucu="{{$masin->id}}" style="position: absolute;
@@ -45,7 +45,7 @@ color: black;
 font-weight:bold;
 font-family: 'Raleway', 'Open Sans', Arial, sans-serif;
             ">
-            <strong>{{'a'}}</strong>-<a href="{{url('suruculer').'/'.$masin->id}}">Profil</a>
+            <strong>{{$masin->surucu()->ad." ".$masin->surucu()->soyad}}</strong>-<a href="{{url('suruculer').'/'.$masin->id}}">Profil</a>
           </div>
             <div class="service-media">
                 <img src="{{asset('images').'/'.$masin->shekil_url}}" alt="">

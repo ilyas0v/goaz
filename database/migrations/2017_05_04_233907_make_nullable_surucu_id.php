@@ -14,7 +14,7 @@ class MakeNullableSurucuId extends Migration
     public function up()
     {
         Schema::table('masinlars', function (Blueprint $table) {
-            $table->dropColumn('surucu_id');
+            //$table->dropColumn('surucu_id');
         });
     }
 

@@ -14,7 +14,7 @@ class NullableSurucuId extends Migration
     public function up()
     {
         Schema::table('masinlars', function (Blueprint $table) {
-            $table->integer('surucu_id')->nullable()->after('id')->unsigned();
+            //$table->integer('surucu_id')->nullable()->after('id')->unsigned();
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DeleteSurucuIdCol extends Migration
+class AddSurucuid extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class DeleteSurucuIdCol extends Migration
     public function up()
     {
         Schema::table('masinlars', function (Blueprint $table) {
-            $table->dropColumn('surucu_id');
+            $table->integer('surucu_id')->after('id')->nullable()->unsigned();
         });
     }
 

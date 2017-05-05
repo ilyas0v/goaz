@@ -30,7 +30,7 @@ Route::group(["middleware"=>["web"]], function(){
     Route::get('cixis',['as'=>'logout' , 'uses' => 'Auth\LoginController@logout']);
     Route::post('qeydiyyat','Auth\RegisterController@register');
     //SURUCU EMELIYATLARI
-    Route::get('suruculer','SurucuController@index');
+    Route::get('suruculer',['uses'=>'SurucuController@index','as'=>'suruculer']);
     Route::get('suruculer/elave_et','SurucuController@create');
     Route::post('suruculer/elave_et',['uses'=>'SurucuController@store','as'=>'suruculer.store']);
 

@@ -29,7 +29,7 @@
           <img class="surucu-avatar" data-surucu="{{$masin->id}}" style="border:1px solid black;
             border-radius:50%;position: absolute;z-index: 100;
             left: 20px;top: 5px;cursor:pointer;"
-            src="{{url('surucu-images')}}/{{$masin->surucu->shekil_url}}"
+            src="{{url('surucu-images')}}/{{$masin->surucu()}}"
             title="">
 
             <div class="surucu-ad" data-surucu="{{$masin->id}}" style="position: absolute;

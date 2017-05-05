@@ -6,6 +6,7 @@
       <div class="container">
         <div class="row" >
             <div style="border:1px solid #fff;padding:50px;" class="col-md-4 col-md-offset-4">
+              @include('partials.login_error')
                 {!! Form::open() !!}
                     {{ Form::label('email','Email:') }}
                     {{ Form::email('email',null,['class'=>'form-control']) }}

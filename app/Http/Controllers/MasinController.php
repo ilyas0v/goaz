@@ -117,9 +117,40 @@ class MasinController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        /*$masin=Masinlar::where('slug','=',$slug)->first();
+        if($request->input('slug')===$masin->slug){
+          $this->validate($request , array(
+            'bashliq' => 'required|max:255',
+            'surucu_id'  => 'required|integer',
+            'sheher'  => 'required|max:30',
+            'qiymet'  => 'required|integer',
+            'dashiya_bileceyi_yuk' => 'required|integer',
+            'haqqinda' => 'required|min:5|max:500'
+          ));
+        }else{
+          $this->validate($request , array(
+            'bashliq' => 'required|max:255',
+            'slug'    => 'required|alpha_dash|min:5|max:255|unique:masinlars,slug',
+            'surucu_id'  => 'required|integer',
+            'sheher'  => 'required|max:30',
+            'qiymet'  => 'required|integer',
+            'dashiya_bileceyi_yuk' => 'required|integer',
+            'haqqinda' => 'required|min:5|max:500'
+          ));
+        }
+
+        $masin->bashliq = $request->input('bashliq');
+        $masin->surucu_id = $request->input('surucu_id');
+        $masin->sheher = $request->input('sheher');
+        $masin->qiymet = $request->input('qiymet');
+        $masin->dashiya_bileceyi_yuk = $request->input('dashiya_bileceyi_yuk');
+        $masin->haqqinda = $request->input('haqqinda');
+
+        $masin->save();
+        return redirect()->route('masinlar');*/
+        return "<h1>Sehife hazir deyil..<a href='/masinlar/'>Geri qayit</a></h1>";
     }
 
     /**

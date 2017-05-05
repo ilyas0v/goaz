@@ -7,7 +7,7 @@
     <div class="col-md-8 col-md-offset-2">
         <h1>Düzəliş səhifəsi | <b style="color:lightblue">{{$masin->bashliq}}</b></h1>
         <hr>
-        {!! Form::model($masin , ["route"=>["masinlar.update" , $masin->id ], "method"=>"PUT"]) !!}
+        {!! Form::model($masin , ["route"=>["masinlar.update" , $masin->slug ], "method"=>"PUT"]) !!}
           {{ Form::label("bashliq", "Başlıq:") }}
           {{ Form::text("bashliq",null ,array("class"=>"form-control" , "required"=>"")) }}
 

@@ -17,6 +17,7 @@ Route::group(["middleware"=>["web"]], function(){
     Route::get('elaqe',function(){ return view('pages.contact');});
     Route::get('giris','Auth\LoginController@showLoginForm');
     Route::get('qeydiyyat',function(){return view('auth.qeydiyyat');});
+    Route::get('profil',function(){return view('users.profile');});
 
     //MASHIN EMELIYATLARI
     Route::get('masinlar' ,['uses'=>'MasinController@index' , 'as'=>'masinlar']);
@@ -33,5 +34,8 @@ Route::group(["middleware"=>["web"]], function(){
     Route::get('suruculer',['uses'=>'SurucuController@index','as'=>'suruculer']);
     Route::get('suruculer/elave_et','SurucuController@create');
     Route::post('suruculer/elave_et',['uses'=>'SurucuController@store','as'=>'suruculer.store']);
+
+    //ISTIFADECILER
+    Route::get('istifadeciler', 'SehifeController@istifadeciler');
 
 });

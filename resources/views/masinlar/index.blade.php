@@ -8,7 +8,7 @@
                   <div class="col-md-12">
                       <div class="custom-heading02">
                           <h2 style="color:white;padding-bottom: 10px;">Bütün maşınlar</h2>
-                          @if (Auth::check())
+                          @if (Auth::check() and  Auth::user()->id===1)
 
                           <p><a href="{{url('/masinlar/elave_et')}}">Yeni maşın əlavə et (+)</a></p>
                           @endif
@@ -21,7 +21,7 @@
               @foreach($masinlar as $masin)
               <div class="col-md-4 col-sm-4" style="margin-top:30px;">
                   <div class="service-feature-box">
-                    @if(Auth::check())
+                    @if(Auth::check() and  Auth::user()->id===1)
                     <a href="{{url('masinlar').'/'.$masin->slug.'/duzelish_et'}}" style="padding:10px;position:absolute;top:5px;right:20px;color:white;background:green;z-index:200;">
                       Düzəliş et >>
                     </a>

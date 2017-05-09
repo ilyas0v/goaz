@@ -8,8 +8,7 @@
                   <div class="col-md-12">
                       <div class="custom-heading02">
                           <h2 style="color:white;padding-bottom: 10px;">Sürücülər:</h2>
-                          @if (Auth::check())
-
+                          @if (Auth::check() and  Auth::user()->id===1)
                           <p><a href="{{url('/suruculer/elave_et')}}">Yeni sürücü əlavə et (+)</a></p>
                           @endif
                       </div><!-- .custom-heading02 end -->

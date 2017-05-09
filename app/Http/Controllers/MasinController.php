@@ -80,13 +80,12 @@ class MasinController extends Controller
     public function show($slug)
     {
         if($slug=="elave_et"){
-          if (Auth::check()) {
+          if (Auth::check() and  Auth::user()->id===1) {
             $suruculer = Surucu::all();
             return view('masinlar.create')->withSuruculer($suruculer);
               return view("masinlar.create");
           }else{
-            $masin=null;
-             return view('masinlar.single')->withMasin($masin);
+             return view('errors.404');
           }
         }
         $masin = Masinlar::where('slug', '=', $slug)->first();
@@ -101,13 +100,18 @@ class MasinController extends Controller
      */
     public function edit($slug)
     {
-        $masin=Masinlar::where('slug','=',$slug)->first();
+        if(Auth::check() and  Auth::user()->id===1){
+          $masin=Masinlar::where('slug','=',$slug)->first();
         $suruculer=Surucu::all();
         $suruculers = [];
         foreach($suruculer as $s){
           $suruculers[$s->id] = $s->ad." ".$s->soyad;
         }
         return view('masinlar.edit')->withMasin($masin)->withSuruculers($suruculers);
+      }else{
+        return view('errors.404');
+      }
+
     }
 
     /**

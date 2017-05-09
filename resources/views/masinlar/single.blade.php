@@ -7,12 +7,17 @@
 
     <div class="row">
       @if(isset($masin))
-      <div class="col-md-8 col-md-offset-2">
-        <h1>{{$masin->bashliq}}</h1>
-        <p>{{$masin->haqqinda}}</p>
-        <hr>
+      <div class="col-md-6">
         <img src="{{asset('images').'/'.$masin->shekil_url}}"  style="width:100%">
-        <p><b>Qiymet: </b>{{$masin->qiymet}}</p>
+      </div>
+      <div class="col-md-6" style="background:rgba(0,0,0,0.3);border-radius:0 20px 0 0">
+        <h1 style="margin-top:15px;">{{$masin->bashliq}}</h1>
+        <p style="font-size:15px;"><strong>Haqqında: </strong><span style='color:lightblue;'>{{$masin->haqqinda}}</span></p>
+        <p style="font-size:15px;"><strong>Günluk qiymət: </strong><span style='color:lightblue;'>{{$masin->qiymet}} AZN</span></p>
+        <p style="font-size:15px;"><strong>Fəaliyyət göstərdiyi şəhər: </strong><span style='color:lightblue;'>{{$masin->sheher}}</span></p>
+        <p style="font-size:15px;"><strong>Daşıya biləcəyi maksimum yük: </strong><span style='color:lightblue;'>{{$masin->dashiya_bileceyi_yuk}} kub-metr</span></p>
+        <p style="font-size:15px;"><strong>Sürücü: </strong><a style='color:lightblue;' href="{{url('suruculer') . '/' . $masin->surucu()->id}}">{{$masin->surucu()->ad . " " . $masin->surucu()->soyad}}</a></p>
+        <hr>
       </div>
       @else
         <h1 style="margin:0 auto;">Bu maşın mövcud deyil.</h1>

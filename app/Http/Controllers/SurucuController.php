@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Surucu;
 use Image;
+use Auth;
 class SurucuController extends Controller
 {
 
@@ -26,7 +27,10 @@ class SurucuController extends Controller
      */
     public function create()
     {
+      if(Auth::check() and  Auth::user()->id===1){
         return view('suruculer.create');
+      }
+        return view('errors.404');
     }
 
     /**

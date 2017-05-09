@@ -43,10 +43,10 @@
 
 
                                     <li class="dropdown {{Request::is('servisler') ? 'current-menu-item' : '' }}">
-                                        <a href="" data-toggle="dropdown" class="dropdown-toggle">Servislər</a>
+                                        <a href="" data-toggle="dropdown" class="dropdown-toggle">Xidmətlərimiz</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Yük daşıma</a></li>
-                                            <li><a href="#">Digər</a></li>
+                                            <li><a href="#">Sərnişin daşıma</a></li>
                                         </ul><!-- .dropdown-menu end -->
                                     </li><!-- .dropdown end -->
 
@@ -55,10 +55,11 @@
                                               <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position:relative;padding-left:50px;">
                                                 <span><img style="width:32px;position:absolute;right:25px;top:20px;bottom:10px;" src="https://cdn0.iconfinder.com/data/icons/the-essential/30/user-512.png"></span><!--{{Auth::user()->name}}--> <span class="caret"></span></a>
                                               <ul class="dropdown-menu">
-                                                <li><a href="#">Profil</a></li>
+                                                <li><a href="/profil">Profil</a></li>
+                                                @if( Auth::user()->id===1)
                                                 <li><a href="{{url('suruculer')}}">Sürücülər</a></li>
                                                 <li><a href="{{url('/masinlar/elave_et')}}">Yeni maşın əlavə et (+)</a></li>
-
+                                                @endif
                                                 <li><a href="{{url('cixis')}}">Çıxış</a></li>
                                               </ul>
                                             </li>
@@ -95,19 +96,21 @@
                                         </li>
 
                                         <li>
-                                            <a href="#">Servislər</a>
+                                            <a href="#">Xidmətlərimiz</a>
                                             <ul class="dl-submenu">
                                                 <li><a href="#">Yük daşıma</a></li>
-                                                <li><a href="#">Digər</a></li>
+                                                <li><a href="#">Sərnişin daşıma</a></li>
                                             </ul><!-- .dl-submenu end -->
                                         </li>
                                         @if(Auth::check())
                                                 <li>
                                                   <a href="#">{{Auth::user()->name}}</a>
                                                   <ul class="dl-submenu">
-                                                    <li><a href="#">Profil</a></li>
+                                                    <li><a href="/profil">Profil</a></li>
+                                                    @if( Auth::user()->id===1)
                                                     <li><a href="{{url('suruculer')}}">Sürücülər</a></li>
                                                     <li><a href="{{url('/masinlar/elave_et')}}">Yeni maşın əlavə et (+)</a></li>
+                                                    @endif
                                                     <li><a href="{{url('cixis')}}">Çıxış</a></li>
                                                   </ul>
                                                 </li>

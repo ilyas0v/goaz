@@ -74,7 +74,8 @@ class SurucuController extends Controller
      */
     public function show($id)
     {
-        //
+          $surucu = Surucu::find($id);
+          return view('suruculer.single')->withSurucu($surucu);
     }
 
     /**

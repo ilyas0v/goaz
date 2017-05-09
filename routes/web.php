@@ -35,6 +35,7 @@ Route::group(["middleware"=>["web"]], function(){
     Route::get('suruculer',['uses'=>'SurucuController@index','as'=>'suruculer']);
     Route::get('suruculer/elave_et','SurucuController@create');
     Route::post('suruculer/elave_et',['uses'=>'SurucuController@store','as'=>'suruculer.store']);
+    Route::get('suruculer/{id}',['uses'=>'SurucuController@show'])->where('id','\d+');
 
     //ISTIFADECILER
     Route::get('istifadeciler', 'SehifeController@istifadeciler');

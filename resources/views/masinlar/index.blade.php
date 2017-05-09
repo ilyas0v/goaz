@@ -51,7 +51,7 @@
     font-family: 'Raleway', 'Open Sans', Arial, sans-serif;
 
                       ">
-                      <strong>{{$masin->surucu()->ad . " " . $masin->surucu()->soyad}}</strong>-<a href="{{url('suruculer').'/'.$masin->id}}">Profil</a>
+                      <strong>{{$masin->surucu()->ad . " " . $masin->surucu()->soyad}}</strong>-<a href="{{url('suruculer').'/'.$masin->surucu()->id}}">Profil</a>
                     </div>
 
                       <div class="service-media">

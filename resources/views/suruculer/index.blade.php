@@ -25,7 +25,7 @@
                           <img src="{{asset('surucu-images').'/'.$surucu->shekil_url}}" alt="">
                       </div>
 
-                      <a href="#">
+                      <a href="/suruculer/{{$surucu->id}}">
                         <div class="service-body">
                           <div class="custom-heading" style="margin-bottom:0px;">
                               <h4>{{$surucu->ad." ".$surucu->soyad}}</h4>

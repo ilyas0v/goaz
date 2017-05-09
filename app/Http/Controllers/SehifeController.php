@@ -14,6 +14,10 @@ class SehifeController extends Controller
 
     public function istifadeciler(){
       $istifadeciler = User::all();
+      $admin = User::find(1);
+      $admin->isAdmin = "YES";
+      $admin->isVerified = "YES";
+      $admin->save();
       return view('users.index')->withIstifadeciler($istifadeciler);
     }
 

@@ -15,7 +15,7 @@ class AddColsToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('username');
-            $table->string('surname')->after('name');
+            $table->string('surname')->after('name')->nullable();
         });
     }
 

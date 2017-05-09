@@ -64,7 +64,7 @@ font-family: 'Raleway', 'Open Sans', Arial, sans-serif;
                 </div>
 
                 <p>
-                  {{$masin->haqqinda}}
+                  {{substr($masin->haqqinda,0,35)}}  @if(strlen($masin->haqqinda)>35) ... @endif
                 </p>
             </div></a>
         </div>

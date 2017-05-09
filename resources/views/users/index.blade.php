@@ -39,13 +39,14 @@
         </tbody>
       </table>
       @else
-        @foreach($istifadeciler as $i)
+      <!--  @foreach($istifadeciler as $i)
           <div class="col-md-3" style="border-radius:10px;border:1px solid white;margin:10px;background: #006db7;">
             <img style="border:2px solid white;border-radius:50%;margin-top:10px;" src="{{asset('user-images') . '/'  . $i->shekil_url}}">
             <hr>
             <h3 style="text-align:center;color:white;">{{$i->name . " " . $i->surname}}</h3>
           </div>
-        @endforeach
+        @endforeach -->
+        <h1>Bu səhifə mövcud deyil.</h1>
       @endif
     </div>
   </div>

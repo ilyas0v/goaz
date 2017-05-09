@@ -14,7 +14,7 @@ class AddNewColsToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('username')->after('name');
+            $table->string('username')->after('name')->nullable();
             $table->string('isAdmin')->default('NO');
             $table->string('isVerified')->default('NO');
             $table->string('shekil_url')->default('default.png');

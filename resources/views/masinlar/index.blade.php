@@ -4,6 +4,7 @@
 
 <div class="page-title-style01 page-title-negative-top pt-bkg02" style="margin-bottom:1px;">
             <div class="container">
+              @include('partials.messages')
               <div class="row">
                   <div class="col-md-12">
                       <div class="custom-heading02">
@@ -23,7 +24,10 @@
                   <div class="service-feature-box">
                     @if(Auth::check() and  Auth::user()->id===1)
                     <a href="{{url('masinlar').'/'.$masin->slug.'/duzelish_et'}}" style="padding:10px;position:absolute;top:5px;right:20px;color:white;background:green;z-index:200;">
-                      Düzəliş et >>
+                      Edit >>
+                    </a>
+                    <a href="{{url('masinlar').'/'.$masin->slug.'/sil'}}" style="padding:10px;position:absolute;top:5px;right:90px;color:white;background:red;z-index:200;">
+                      Sil
                     </a>
                     @endif
                     <img class="surucu-avatar" data-surucu="{{$masin->id}}" style="border:1px solid black;

@@ -163,8 +163,15 @@ class MasinController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        if(Auth::check() and Auth::user()->id===1){
+          $masin = Masinlar::where('slug', '=' , $slug);
+          $masin->delete();
+          Session::flash('success' , 'Maşın uğurla silindi...');
+          return redirect()->route('masinlar');
+        }else{
+          return view('errors.404');
+        }
     }
 }

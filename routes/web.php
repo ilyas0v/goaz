@@ -25,6 +25,7 @@ Route::group(["middleware"=>["web"]], function(){
     Route::get('masinlar/elave_et' , 'MasinController@create');
     Route::post('masinlar/elave_et' ,['uses' => 'MasinController@store' , 'as'=> 'masinlar.store']);
     Route::get('masinlar/{slug}/duzelish_et',['uses'=>'MasinController@edit'])->where('slug','[\w\d\-\_]+');
+    Route::get('masinlar/{slug}/sil',['uses'=>'MasinController@destroy'])->where('slug','[\w\d\-\_]+');
     Route::put('masinlar/{slug}/duzelish_et',['uses'=>'MasinController@update','as'=>'masinlar.update'])->where('slug','[\w\d\-\_]+');
     // Login ,Logout ve Qeydiyyat
     Route::post('giris','Auth\LoginController@login');

@@ -3,6 +3,7 @@
 @section("content")
 <div class="page-title-style01 page-title-negative-top pt-bkg02" style="margin-bottom:1px;">
   <div class="container">
+    @include('partials.messages')
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h1>Yeni maşın əlavəsi</h1>

@@ -6,5 +6,13 @@
 @include('partials.javascripts')
 @yield('scripts')
 @yield('JS')
+<script>
+$(document).ready(function(){
+  $('.mesaji_bagla').on('click',function(){
+    $('.success_mesaj').remove();
+    $('.xeta_mesaj').remove();
+  });
+});
+</script>
 </body>
 </html>
